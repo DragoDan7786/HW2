@@ -12,45 +12,30 @@ import java.util.Scanner;
 public class NewClass {
     
     int[] arr;
-    int one;
+    int numItems;
 
-    public int[] getArr() {
-        return arr;
-    }
-
-    public void setArr(int[] arr) {
-        this.arr = arr;
-    }
-
-    public int getOne() {
-        return one;
-    }
-
-    public void setOne(int one) {
-        this.one = one;
-    }
-    
-    public int maxPair(NewClass theClass){
-        arr = theClass.getArr();
-        one = theClass.getOne();
-        int max = arr[0];
-        for(int i = 0 ; i < arr.length ; i++)
-            if(arr[i] > max)
-                max = arr[0];
-        return max + one;
-    }
+    public int[] getArr() {return arr;}
+    public void setArr(int[] arr) {this.arr = arr;}
+    public int getNumItems() {return numItems;}
+    public void setNumItems(int numItems) {this.numItems = numItems;}
     
     public NewClass(int theInt , int[] theArr){
-        one = theInt;
+        numItems = theInt;
         arr = theArr;
     }
     
+    public int MaxPair(){
+        
+        
+        return 0;
+    }
     
  public static void main(String[] args) throws ParseException {
  Instant start = Instant.now();
 
  long i=0;
- while (i<100000000){i++;}
+ while (i<100000000){i++;
+ }
 
  
  
