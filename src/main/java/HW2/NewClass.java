@@ -23,9 +23,9 @@ public class NewClass {
     public int MaxPair(){
         
         int max1 = arr[0];
-        int max2 = arr[0];
+        int max2 = 0;
         
-        for(int i = 0; i< numItems ; i++){
+        for(int i = 1; i< numItems ; i++){
             if(arr[i] > max1)
                 max1 = arr[i];    
             
@@ -42,9 +42,31 @@ public class NewClass {
      
  Instant start = Instant.now();
  
- System.out.println("Input sequence length");
+ Scanner theScan = new Scanner(System.in);
+ int num;
+ int[] theSequence;
  
+ System.out.println("Input sequence length");
+ num = theScan.nextInt();
 
+ if(num < 2 || num > 2*(10^5))
+     System.out.print("ERROR");
+ 
+ else{
+     theSequence = new int[num];
+     System.out.println("Insert the contents of the sequence");
+     
+     
+     for(int i = 0 ; i < num ; i++)
+         theSequence[i] = theScan.nextInt();
+     
+     
+     NewClass seq = new NewClass(num , theSequence);
+     
+     System.out.println("The max pair multiplied is " + seq.MaxPair());
+     
+     }
+ 
  
  
  Instant finish = Instant.now();
@@ -56,3 +78,4 @@ public class NewClass {
  
  }
 }
+
