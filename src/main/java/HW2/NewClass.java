@@ -14,10 +14,6 @@ public class NewClass {
     int[] arr;
     int numItems;
 
-    public int[] getArr() {return arr;}
-    public void setArr(int[] arr) {this.arr = arr;}
-    public int getNumItems() {return numItems;}
-    public void setNumItems(int numItems) {this.numItems = numItems;}
     
     public NewClass(int theInt , int[] theArr){
         numItems = theInt;
@@ -26,24 +22,37 @@ public class NewClass {
     
     public int MaxPair(){
         
+        int max1 = arr[0];
+        int max2 = arr[0];
         
-        return 0;
+        for(int i = 0; i< numItems ; i++){
+            if(arr[i] > max1)
+                max1 = arr[i];    
+            
+            else{
+                if(arr[i] > max2 && arr[i] <= max1)
+                   max2 = arr[i];
+            }
+        }
+        
+        return max1 * max2;
     }
     
  public static void main(String[] args) throws ParseException {
+     
  Instant start = Instant.now();
+ 
+ System.out.println("Input sequence length");
+ 
 
- long i=0;
- while (i<100000000){i++;
- }
-
- 
- 
- 
  
  
  Instant finish = Instant.now();
  long timeElapsed = Duration.between(start, finish).toMillis(); //in millis
  System.out.println("time "+ timeElapsed);
+    
+
+     
+ 
  }
 }
